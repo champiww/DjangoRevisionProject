@@ -1,0 +1,74 @@
+/* COLORES DE FONDO https://blog.karenying.com/posts/50-shades-of-dark-mode-gray#spotify-macos-app */
+body {
+    background-color: #121212;
+    color: white;
+}
+header {
+    display: flex;
+    padding: 1em;
+}
+.navItem {
+    width: 3em;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 80%;
+}
+.colorMenus {
+    background-color: #181818;
+}
+.left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.5em;
+}
+.card {
+    background-color: #f1f1f1;
+    width: 10em;
+    word-wrap: normal;
+}
+.card-body {
+    background-color: #121212;
+}
+footer {
+    padding: 2em;
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 1) !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+}
+
+.textSize {
+    font-size: 1.5em;
+}
+
+#blogtitle {
+    font-size: 6rem;
+}
+
+@media (min-width: 992px) {
+    #hometext {
+        font-size: 4rem;
+    }
+    #blogdetailtitle {
+        font-size: 5rem;
+    }
+}

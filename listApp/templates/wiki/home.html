@@ -1,0 +1,77 @@
+{% extends "wiki/base.html" %} {% load static %} {% block content %}
+
+    <body>
+        <header class="colorMenus">
+            <div class="left" style="padding-right: 5em">
+                <a href="index.php"
+                    ><img
+                        style="height: 5em"
+                        src="imagenes/Honkai_Star_Rail.webp"
+                        alt="Página principal"
+                /></a>
+            </div>
+
+            <nav>
+                <a href="form.php" class="nav-item" style="padding-right: 1em"
+                    ><img
+                        src="imagenes/AvatarIcon.webp"
+                        alt="Buscar personaje"
+                        style="width: 3em"
+                /></a>
+                <a href="#" class="nav-item"
+                    ><img
+                        src="imagenes/InventoryLightConeIcon.webp"
+                        alt="Buscar arma"
+                        style="width: 3em"
+                /></a>
+            </nav>
+            <div class="right">ww</div>
+        </header>
+
+        <div
+            class="container-fluid-md p-3 text-center"
+            style="width: 70%; margin: auto"
+        >
+            <div class="row">
+                <div
+                    class="col-sm-2"
+                    style="margin-bottom: 1em;"
+                >
+                    <div class="card">
+                        <img class="" src="" alt="Personaje" />
+                        <img
+                            src=""
+                            alt="Elemento"
+                            style="
+                                width: 2rem;
+                                height: 2rem;
+                                position: absolute;
+                                top: 0;
+                            "
+                        />
+                        <img
+                            src=""
+                            alt="Vía"
+                            style="
+                                width: 2rem;
+                                height: 2rem;
+                                position: absolute;
+                                top: 0;
+                                right: 0;
+                            "
+                        />
+                        <div class="card-body">
+                            <p style="color: white">nombre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            All contents are trademarks and copyrights of Hoyoverse.
+        </footer>
+
+        {% endblock %}
+
+    </body>
+</html>
