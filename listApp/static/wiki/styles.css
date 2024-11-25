@@ -3,19 +3,6 @@ body {
     background-color: #121212;
     color: white;
 }
-header {
-    display: flex;
-    padding: 1em;
-}
-.navItem {
-    width: 3em;
-}
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 80%;
-}
 .colorMenus {
     background-color: #181818;
 }

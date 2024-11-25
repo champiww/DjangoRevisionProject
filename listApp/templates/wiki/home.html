@@ -1,77 +1,89 @@
 {% extends "wiki/base.html" %} {% load static %} {% block content %}
 
-    <body>
-        <header class="colorMenus">
-            <div class="left" style="padding-right: 5em">
-                <a href="index.php"
-                    ><img
-                        style="height: 5em"
-                        src="imagenes/Honkai_Star_Rail.webp"
-                        alt="Página principal"
-                /></a>
-            </div>
+<!-- Clases CSS para el fondo del personaje -->
+<style>
+    .fiveStar {
+        background-image: linear-gradient(rgb(118, 74, 35), rgb(142, 92, 38));
+    }
+    .fourStar {
+        background-image: linear-gradient(rgb(75, 70, 110), rgb(94, 61, 116));
+    }
+</style>
 
-            <nav>
-                <a href="form.php" class="nav-item" style="padding-right: 1em"
-                    ><img
-                        src="imagenes/AvatarIcon.webp"
-                        alt="Buscar personaje"
-                        style="width: 3em"
-                /></a>
-                <a href="#" class="nav-item"
-                    ><img
-                        src="imagenes/InventoryLightConeIcon.webp"
-                        alt="Buscar arma"
-                        style="width: 3em"
-                /></a>
-            </nav>
-            <div class="right">ww</div>
-        </header>
-
-        <div
-            class="container-fluid-md p-3 text-center"
-            style="width: 70%; margin: auto"
-        >
-            <div class="row">
-                <div
-                    class="col-sm-2"
-                    style="margin-bottom: 1em;"
-                >
-                    <div class="card">
-                        <img class="" src="" alt="Personaje" />
-                        <img
-                            src=""
-                            alt="Elemento"
-                            style="
-                                width: 2rem;
-                                height: 2rem;
-                                position: absolute;
-                                top: 0;
+<div
+    class="container-fluid-md p-3 text-center"
+    style="width: 90%; margin: auto"
+>
+    <div class="row">
+        {% for character in characterList %}
+        <div class="col-sm-2" style="margin-bottom: 1em; margin-right: 1em">
+            <div class="card">
+                <img
+                    class="{% if character.rarity %} fiveStar {% else %} fourStar {% endif %}"
+                    src="{{ character.image.url }}"
+                    alt="Personaje"
+                />
+                <img
+                    src="
+                            {% if character.element == 'fire' %}
+                                {% static 'wiki/fire.webp' %}
+                            {% elif character.element == 'ice' %}
+                                {% static 'wiki/ice.webp' %}
+                            {% elif character.element == 'imaginary' %}
+                                {% static 'wiki/imaginary.webp' %}
+                            {% elif character.element == 'physical' %}
+                                {% static 'wiki/physical.webp' %}
+                            {% elif character.element == 'quantum' %}
+                                {% static 'wiki/quantum.webp' %}
+                            {% elif character.element == 'lightning' %}
+                                {% static 'wiki/lightning.webp' %}
+                            {% elif character.element == 'wind' %}
+                                {% static 'wiki/wind.webp' %}
+                            {% endif %}
                             "
-                        />
-                        <img
-                            src=""
-                            alt="Vía"
-                            style="
-                                width: 2rem;
-                                height: 2rem;
-                                position: absolute;
-                                top: 0;
-                                right: 0;
+                    alt="Elemento"
+                    style="
+                        width: 2rem;
+                        height: 2rem;
+                        position: absolute;
+                        top: 0;
+                    "
+                />
+                <img
+                    src="
+                            {% if character.path == 'preservation' %}
+                                {% static 'wiki/preservation.webp' %}
+                            {% elif character.path == 'erudition' %}
+                                {% static 'wiki/erudition.webp' %}
+                            {% elif character.path == 'abundance' %}
+                                {% static 'wiki/abundance.webp' %}
+                            {% elif character.path == 'hunt' %}
+                                {% static 'wiki/hunt.webp' %}
+                            {% elif character.path == 'harmony' %}
+                                {% static 'wiki/harmony.webp' %}
+                            {% elif character.path == 'nihility' %}
+                                {% static 'wiki/nihility.webp' %}
+                            {% elif character.path == 'destruction' %}
+                                {% static 'wiki/destruction.webp' %}
+                            {% endif %}
                             "
-                        />
-                        <div class="card-body">
-                            <p style="color: white">nombre</p>
-                        </div>
-                    </div>
+                    alt="Vía"
+                    style="
+                        width: 2rem;
+                        height: 2rem;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                    "
+                />
+                <div class="card-body">
+                    <p style="color: white">{{character.name}}</p>
                 </div>
             </div>
         </div>
-        <footer>
-            All contents are trademarks and copyrights of Hoyoverse.
-        </footer>
+        {% endfor %}
+    </div>
+</div>
+<footer>All contents are trademarks and copyrights of Hoyoverse.</footer>
 
-        {% endblock %}
-
-    </body>
-</html>
+{% endblock %}
